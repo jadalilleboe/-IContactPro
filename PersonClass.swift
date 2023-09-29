@@ -2,7 +2,6 @@ import Foundation
 
 class Person {
     // Properties
-    var contactID: Int
     var firstName: String
     var lastName: String
     var companyName: String
@@ -11,11 +10,9 @@ class Person {
     var emailAddresses: [EmailAddress]
     var addresses: [Address]
     var socialProfiles: [SocialProfile]
-    var notes: String
     
     // Initializer
-    init(contactID: Int,
-         firstName: String,
+    init(firstName: String,
          lastName: String,
          companyName: String,
          jobTitle: String,
@@ -23,10 +20,8 @@ class Person {
          emailAddresses: [EmailAddress],
          addresses: [Address],
          socialProfiles: [SocialProfile],
-         notes: String,
-         tags: [CommunityTags]) 
+) 
         {
-        self.contactID = contactID
         self.firstName = firstName
         self.lastName = lastName
         self.companyName = companyName
@@ -35,14 +30,7 @@ class Person {
         self.emailAddresses = emailAddresses
         self.addresses = addresses
         self.socialProfiles = socialProfiles
-        self.notes = notes
-        self.importantDates = importantDates
-        self.website = website
-        self.customFields = customFields
-    }
 
-    func getFullName() -> String {
-        return "\(firstName) \(lastName)"
     }
     
     func getFullName() -> String {
@@ -76,7 +64,3 @@ struct SocialProfile {
     var username: String
 }
 
-struct CommunityTags {
-    var key: String
-    var value: String
-}
